@@ -9,6 +9,9 @@ import org.springframework.stereotype.Component;
  * @date 2018/6/12 23:51
  */
 @Component
+/**
+ * 批量绑定
+ */
 @ConfigurationProperties(prefix = "person")
 public class Person {
 
