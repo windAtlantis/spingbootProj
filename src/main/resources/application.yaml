@@ -4,3 +4,22 @@ person:
   sex: male
 
 tempvar: 实施
+
+## 选用配置
+#spring:
+#  profiles:
+#    active: online
+## 或使用命令行参数 --spring.profiles.active=online
+## 或使用虚拟机参数 -Dspring.profiles.active=online
+
+#---
+#spring:
+#  profiles: prod
+#server:
+#  port: 8084
+#
+#---
+#spring:
+#  profiles: online
+#server:
+#  port: 8085
