@@ -28,5 +28,20 @@
 4. 使用@configration注解
 tips:高优先覆盖低优先，高低互补
 
+### 日志系统
+> springboot使用的日志系统：slf4j+logback
+
+日志抽象类 | 日志实现
+------------ | -------------
+slf4j | commons-logging log4j log4j2 logback
+
+推荐使用{}-spring.xml的日志配置
+配合<springProfile name="">
+指定环境输出
+spring.profiles.active
+
+#### 日志框架切换
+排除适配器包，引入目标日志框架包，引入相应适配包
+
 # 微服务
 > 原独立服务拆分成独立功能单元
