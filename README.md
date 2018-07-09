@@ -27,6 +27,17 @@ xxxAutoConfiguration 自动配置，包括：自动设置配置文件，在容�
 xxxConfigurationProperties 将默认配置文件转换为配置类
 ```
 
+#### 修改springBoot默认配置
+1. springBoot在自动配置组件的时候，会先在容器中查找用户自定义的配置，在没有的情况下才会使用默认配置
+2. 编写一个配置类（@configuration），继承WebMvcConfigurationAdapter，来扩展springMVC
+
+@EnableWebMvc 可以使得springMVC的自动配置失效
+
+```java 
+@ConditionalOnMissingBean(WebMvcConfigurationSupport.class)
+public class WebMvcAutoConfiguration {
+```
+
 ### 配置文件
 1. 来自启动参数
 2. 来自application-{profile}的配置
@@ -111,13 +122,19 @@ public WelcomePageHandlerMapping welcomePageHandlerMapping(
 ```
 
 ### 模板引擎
-Thymeleaf
+[Thymeleaf](https://www.thymeleaf.org/)
 
 ``` xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-thymeleaf</artifactId>
 </dependency>
+```
+
+```
+ThymeleafProperties.java
+public static final String DEFAULT_PREFIX = "classpath:/templates/";
+public static final String DEFAULT_SUFFIX = ".html";
 ```
 
 # 微服务
