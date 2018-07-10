@@ -110,7 +110,7 @@ classpath:/public/
 
 #### 欢迎页
 index.html
-```
+``` java
 @Bean
 public WelcomePageHandlerMapping welcomePageHandlerMapping(
         ApplicationContext applicationContext) {
@@ -131,11 +131,14 @@ public WelcomePageHandlerMapping welcomePageHandlerMapping(
 </dependency>
 ```
 
-```
+``` java
 ThymeleafProperties.java
 public static final String DEFAULT_PREFIX = "classpath:/templates/";
 public static final String DEFAULT_SUFFIX = ".html";
 ```
+
+### 国际化
+locale
 
 # 微服务
 > 原独立服务拆分成独立功能单元
