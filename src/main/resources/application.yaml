@@ -5,6 +5,12 @@ person:
 
 tempvar: 实施
 
+## 禁用模板缓存
+spring:
+  thymeleaf:
+    cache: false
+
+
 ## 选用配置
 #spring:
 #  profiles:

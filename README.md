@@ -137,6 +137,52 @@ public static final String DEFAULT_PREFIX = "classpath:/templates/";
 public static final String DEFAULT_SUFFIX = ".html";
 ```
 
+#### 页面抽取
+// 声明片段
+th:fragment = ""
+```html
+<footer th:fragment="copy">
+  &copy; 2011 The Good Thymes Virtual Grocery
+</footer>
+```
+
+// 插入到外部html
+th:insert = ""
+
+// 替换外部html
+th:replace = ""
+
+// 在外部标签中插入片段文字内容
+th:include = ""
+```html
+<body>
+  ...
+  <div th:insert="footer :: copy"></div>
+  <div th:replace="footer :: copy"></div>
+  <div th:include="footer :: copy"></div>
+  
+</body>
+```
+
+result:
+```html
+<body>
+  ...
+  <div>
+    <footer>
+      &copy; 2011 The Good Thymes Virtual Grocery
+    </footer>
+  </div>
+  <footer>
+    &copy; 2011 The Good Thymes Virtual Grocery
+  </footer>
+  <div>
+    &copy; 2011 The Good Thymes Virtual Grocery
+  </div>
+  
+</body>
+```
+
 ### 国际化
 locale
 
