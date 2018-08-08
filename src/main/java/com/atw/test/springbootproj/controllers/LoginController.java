@@ -21,7 +21,7 @@ public class LoginController {
 	                        RedirectAttributes redirectAttributes, HttpSession session) {
 		if ("admin".equals(username) && "admin".equals(passwd)) {
 			session.setAttribute("loginid", username);
-			return "redirect:/hello";
+			return "redirect:/main";
 		} else {
 			// 可以在 login 对应的模版中通过表达式，比如 jsp 中 jstl 用 ${param}，获取返回值。该值其实是保存在 session 中的，并且会在下次重定向请求时删除。
 			redirectAttributes.addFlashAttribute("msg", "登陆失败");
